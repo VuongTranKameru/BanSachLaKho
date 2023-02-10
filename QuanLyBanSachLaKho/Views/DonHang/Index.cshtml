@@ -1,0 +1,76 @@
+﻿@model IEnumerable<QuanLyBanSachLaKho.Models.DonHang>
+
+@{
+    ViewBag.Title = "Danh Sách Đơn Hàng";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>QUẢN LÝ ĐƠN HÀNG CỦA KHÁCH</h2>
+
+<div class="table-responsive">
+    <table class="table">
+        <tr class="bg-warning">
+            <th>
+                Mã Đơn Hàng
+            </th>
+            <th class="col-1">
+                Ngày Đặt Hàng
+            </th>
+            <th>
+                Thanh Toán
+            </th>
+            <th>
+                 Tên Người Nhận
+            </th>
+            <th class="col-2">
+                 Địa Chỉ Giao Hàng
+            </th>
+            <th>
+                Sđt Người Nhận
+            </th>
+            <th>
+                Người Đặt Hàng
+            </th>
+            <th class="col-2">
+                Hình Thức Thanh Toán
+            </th>
+            <th class="col-1"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="alert-warning">
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaDH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayDH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiaDH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenNguoiNhan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaChiGiao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SdtNguoiNhan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KhachHang.MatKhau)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThanhToan.TenHTTT)
+                </td>
+                <td>
+                    <a href='@Url.Action("Details", "DonHang", new { id = item.MaDH })'>
+                        <i class="icon icon-wrap nalika-info"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

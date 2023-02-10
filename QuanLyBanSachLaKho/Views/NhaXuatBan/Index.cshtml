@@ -1,0 +1,63 @@
+﻿@model IEnumerable<QuanLyBanSachLaKho.Models.NhaXuatBan>
+
+@{
+    ViewBag.Title = "Danh Sách Nhà Xuất Bản";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>QUẢN LÝ NHÀ XUẤT BẢN</h2>
+
+<div style="padding-bottom:10px;">
+    <a class="btn btn-light" href='@Url.Action("Create", "NhaXuatBan")' role="button">
+        + Thêm NXB Mới
+    </a>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <tr class="bg-warning">
+            <th>
+                Mã NXB
+            </th>
+            <th>
+                Tên NXB
+            </th>
+            <th class="col-3">
+                Địa Chỉ NXB
+            </th>
+            <th>
+                Số Điện Thoại NXB
+            </th>
+            <th class="col-1"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="alert-warning">
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaNXB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenNXB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaChiNXB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SdtNXB)
+                </td>
+                <td>
+                    <a href='@Url.Action("Edit", "NhaXuatBan", new { id = item.MaNXB })'>
+                        <i class="icon icon-wrap nalika-edit"></i>
+                    </a>
+                    <a href='@Url.Action("Details", "NhaXuatBan", new { id = item.MaNXB })'>
+                        <i class="icon icon-wrap nalika-info"></i>
+                    </a>
+                    <a href='@Url.Action("Delete", "NhaXuatBan", new { id = item.MaNXB })'>
+                        <i class="icon icon-wrap nalika-delete-button"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

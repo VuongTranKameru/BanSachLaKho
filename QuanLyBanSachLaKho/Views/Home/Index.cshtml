@@ -1,0 +1,14 @@
+﻿@using QuanLyBanSachLaKho.Models
+@model IEnumerable<Sach>
+@{
+    ViewBag.Title = "Trang chủ";
+}
+
+<div class="main">
+    <table>
+        @Html.Action("SachBanChay", "Home")
+        @Html.Action("SachMoi", "Home")
+        @Html.Action("SachGiamGia", "Home")
+        @Html.Action("SachHayMoiTuan", "Home")
+    </table>
+</div>

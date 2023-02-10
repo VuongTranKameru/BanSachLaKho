@@ -1,0 +1,62 @@
+﻿@model QuanLyBanSachLaKho.Models.TheLoai
+
+@{
+    ViewBag.Title = Html.DisplayFor(model => model.TenTheLoai);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{  int itemCount = 0;
+    int itemIncrease = 4;
+    int itemDecrease = 0;}
+
+<div class="main">
+    <table>
+        <tr>
+            <td class="top" colspan="4">
+                <b>@Html.DisplayFor(model => model.TenTheLoai)</b>
+            </td>
+        </tr>
+        @foreach (var dongsach in Model.Saches)
+        {
+            if ((itemCount % 4) == 0)
+            {
+                <tr class="middle">
+                    @foreach (var sach in Model.Saches)
+                    {
+                        if ((itemDecrease <= itemCount) && (itemCount < itemIncrease))
+                        {
+                            <td>
+                                <div id="tooltip">
+                                    <a href="@Url.Action("Xem", "Sach", new { id = sach.MaSach })">
+                                        <img src="~/image/@sach.HinhSach" />
+                                    </a>
+                                    <div id="tooltiptext">
+                                        <ul class="introduce">
+                                            <li class="tacpham">@sach.TenSach</li>
+                                            <li class="tacgia">@sach.TacGia.TenTG</li>
+                                            <li class="gia">@(sach.DonGia)đ</li>
+                                            <li style="padding-bottom: 7px;">
+                                                @Html.ActionLink("Mua hàng", "MuaNgay", "GioHang", new { MaSP = sach.MaSach },
+                                                                htmlAttributes: new { @class = "mua", @role = "button" })
+                                            </li>
+                                            <li style="padding-bottom: 7px;">
+                                            @Html.ActionLink("Thêm vào giỏ hàng", "ThemVaoGio", "GioHang", new { MaSP = sach.MaSach },
+                                                                htmlAttributes: new { @class = "gio", @role = "button" })
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        }
+                        if ((itemCount != itemIncrease))
+                        { itemCount += 1; }
+                        else
+                        { break; }
+                    }
+                </tr>
+            }
+            itemCount = 0; itemDecrease += 4; itemIncrease += 4;
+            if (itemDecrease >= @Model.Saches.Count) { break; }
+        }
+        <tr><td class="bookshelf" colspan="4"></td></tr>
+    </table>
+</div>

@@ -1,0 +1,14 @@
+﻿@using QuanLyBanSachLaKho.Models
+@model IEnumerable<TheLoai>
+
+
+<ul class="submenu dropdown-menu">
+    @foreach (var theLoai in Model)
+    {
+        <li class="@theLoai.MaTheLoai">
+            <a href="@Url.Action("Xem", "TheLoai", new { id = theLoai.MaTheLoai })">
+                @theLoai.TenTheLoai
+            </a>
+        </li>
+    }
+</ul>

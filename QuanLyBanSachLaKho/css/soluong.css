@@ -1,0 +1,61 @@
+﻿/*hide the input = number bcs its not sty-able and allow to be custom*/
+.soluong input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    /*appearance: textfield;*/
+}
+
+.soluong [type=number]::-webkit-inner-spin-button,
+.soluong [type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.soluong div { 
+    display: inline-flex;
+} 
+ 
+.soluong, .soluong * { 
+    box-sizing: border-box; 
+} 
+ 
+/*button thay bang span vi button se trigger event httpost*/
+.soluong span { 
+    -webkit-appearance: none; 
+    background-color: transparent; 
+    border: none; 
+    align-items: center; 
+    justify-content: center; 
+    width: 2rem; 
+    height: 2rem; 
+    cursor: pointer; 
+    margin: 0; 
+    position: relative; 
+
+    padding-top: 15px;
+} 
+ 
+.soluong span:before, 
+.soluong span:after { 
+  display: inline-block; 
+  position: absolute; 
+  content: ''; 
+  width: 1rem; 
+  height: 2px; 
+  background-color: #212121; 
+  transform: translate(-50%, -50%); 
+} 
+.soluong span.plus:after { 
+  transform: translate(-50%, -50%) rotate(90deg); 
+} 
+ 
+.soluong input[type=number] { 
+  font-family: sans-serif; 
+  max-width: 4.5rem; 
+  padding: .3rem; 
+  border: solid #ddd; 
+  border-width: 0 2px; 
+  font-size: 1.5rem; 
+  height: 2rem; 
+  font-weight: bold; 
+  text-align: center; 
+}

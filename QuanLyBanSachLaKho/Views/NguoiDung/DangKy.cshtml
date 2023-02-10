@@ -1,0 +1,82 @@
+﻿@model QuanLyBanSachLaKho.Models.KhachHang
+
+@{
+    ViewBag.Title = "Đăng Ký";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p>@ViewBag.log</p>
+
+<br />
+<div class="log">
+    <div class="formdangnhap container">
+        @using (Html.BeginForm("DangKy", "NguoiDung", FormMethod.Post))
+        {
+            @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+            <h2 style="text-align: center;"><b>ĐĂNG KÝ</b></h2>
+            <p>Vui lòng điền thông tin vào đây để đăng ký:</p>
+            <hr>
+
+            <div class="form-group" id="textbox-form">
+                <label for="hodem"><b>Họ và Tên Đệm:</b></label><br />
+                @Html.TextBox("HoDemKH", null, new { @class = "form-control", @name = "hodem", required = "required", placeholder = "Điền họ và tên đệm" })
+                @Html.ValidationMessage("HoDemKH", "", new { @class = "validationMessange" })
+            </div>
+            <div class="form-group" id="textbox-form">
+                <label for="ten"><b>Tên:</b></label><br />
+                @Html.TextBox("TenKH", null, new { @class = "form-control", @name = "ten", required = "required", placeholder = "Điền tên" })
+                @Html.ValidationMessage("TenKH", "", new { @class = "validationMessange" })
+            </div>
+            <div class="form-group" id="textbox-form">
+                <label for="diachi"><b>Địa chỉ:</b></label><br />
+                @Html.TextBox("DiachiKH", null, new { @class = "form-control", @name = "diachi", required = "required", placeholder = "Điền địa chỉ" })
+                @Html.ValidationMessage("DiachiKH", "", new { @class = "validationMessange" })
+            </div>
+            <div class="form-group" id="textbox-form">
+                <label for="dienthoai"><b>Điện thoại:</b></label><br />
+                @Html.TextBox("SdtKH", null, new { @class = "form-control", @name = "dienthoai", required = "required", placeholder = "Điền số điện thoại" })
+                @Html.ValidationMessage("SdtKH", "", new { @class = "validationMessange" })
+            </div>
+            <div class="form-group" id="textbox-form">
+                <label for="email"><b>Email:</b></label><br />
+                @Html.TextBox("Email", null, new { @class = "form-control", @name = "email", type = "email", required = "required", placeholder = "Điền email" })
+                @Html.ValidationMessage("Email", "", new { @class = "validationMessange" })
+            </div>
+            <div class="form-group" id="textbox-form">
+                <label for="ngaysinh"><b>Ngày sinh:</b></label><br />
+                @Html.TextBox("NgaySinh", null, new { @class = "form-control", @name = "ngaysinh", type = "date", placeholder = "mm/dd/yyyy" })
+                @Html.ValidationMessage("NgaySinh", "", new { @class = "validationMessange" })
+            </div>
+            <div class="form-group" id="textbox-form">
+                <label for="ngaysinh"><b>Giới tính:</b></label>
+                Nam: @Html.RadioButton("GioiTinh", "Nam", new { @name = "gioitinh", type = "radio", value = "nam" })
+                Nữ: @Html.RadioButton("GioiTinh", "Nữ", new { @name = "gioitinh", type = "radio", value = "nu" })
+                @Html.ValidationMessage("GioiTinh", "", new { @class = "validationMessange" })
+            </div>
+            <hr>
+
+            <div class="form-group" id="textbox-form">
+                <label for="taikhoan"><b>Tên đăng nhập:</b></label><br />
+                @Html.TextBox("TaiKhoan", null, new { @class = "form-control", @name = "taikhoan", required = "required", placeholder = "Điền tên đăng nhập" })
+                @Html.ValidationMessage("TaiKhoan", "", new { @class = "validationMessange" })
+            </div>
+            <div class="form-group" id="textbox-form">
+                <label for="matkhau"><b>Mật khẩu:</b></label><br />
+                @Html.Password("Matkhau", null, new { @class = "form-control", @name = "matkhau", required = "required", placeholder = "Điền mật khẩu" })
+                @Html.ValidationMessage("Matkhau", "", new { @class = "validationMessange" })
+            </div>
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin:15px 0"> Ghi nhớ Tài Khoản
+            </label>
+            <label style="float: right; margin: 15px 0; padding-right: 10px">
+                Đã có tài khoản? <span style="color:dodgerblue">@Html.ActionLink("Đăng nhập ngay", "DangNhap", "NguoiDung")</span>
+            </label><br>
+            <label style="padding-bottom: 8px">
+                Bằng việc tạo tài khoản, bạn đồng ý với
+                <a href="#" style="color:dodgerblue">Điều Khoản Dịch Vụ và Chính Sách Bảo Mật</a> của chúng tôi.
+            </label>
+            <div class="clearfix">
+                <button type="submit" class="signupbtn">ĐĂNG KÝ TÀI KHOẢN</button>
+            </div>
+        }
+    </div>
+</div>

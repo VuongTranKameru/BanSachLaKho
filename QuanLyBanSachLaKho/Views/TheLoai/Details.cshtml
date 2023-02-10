@@ -1,0 +1,31 @@
+﻿@model QuanLyBanSachLaKho.Models.TheLoai
+
+@{
+    ViewBag.Title = "Thông Tin Về Thể Loại " + @Html.DisplayFor(model => model.TenTheLoai);
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link href="~/css/kesach.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+
+<br />
+<h2 style="text-align: center;"><b>THÔNG TIN CHI TIẾT CỦA THỂ LOẠI</b></h2>
+
+<div class="log">
+    <div class="formdangnhap container">
+        <dl class="formuser">
+            <dt>
+                Tên Thể Loại:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenTheLoai)
+            </dd>
+
+        </dl>
+        <p>
+            <a href='@Url.Action("Edit", "TheLoai", new { id = Model.MaTheLoai })' role="button" class="btn btn-info">
+                Chỉnh sửa thông tin thể loại
+            </a>
+            <a href="/TheLoai" role="button" class="btn btn-secondary">Quay về danh sách</a>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+﻿@model QuanLyBanSachLaKho.Models.KhachHang
+
+@{
+    ViewBag.Title = "Tạo Tài Khoản Mới";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link href="~/css/kesach.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+
+<br />
+<h2 style="text-align: center;"><b>TẠO TÀI KHOẢN NGƯỜI DÙNG</b></h2>
+
+<div class="log">
+    <div class="formdangnhap container">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <p>Vui lòng điền thông tin vào đây để đăng ký cho khách hàng:</p>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <hr />
+
+            <div class="form-group" id="textbox-form">
+                <label for="hodem"><b>Mã Khách Hàng:</b></label><br />
+                @Html.EditorFor(model => model.MaKH, new { htmlAttributes = new { @class = "form-control", @Value = ViewBag.MaKH } })
+                @Html.ValidationMessageFor(model => model.MaKH, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="hodem"><b>Họ và Tên Đệm:</b></label><br />
+                @Html.EditorFor(model => model.HoDemKH, new { htmlAttributes = new { @class = "form-control", placeholder = "Điền họ và tên đệm" } })
+                @Html.ValidationMessageFor(model => model.HoDemKH, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="ten"><b>Tên:</b></label><br />
+                @Html.EditorFor(model => model.TenKH, new { htmlAttributes = new { @class = "form-control", placeholder = "Điền tên" } })
+                @Html.ValidationMessageFor(model => model.TenKH, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="diachi"><b>Địa chỉ:</b></label><br />
+                @Html.EditorFor(model => model.DiaChiKH, new { htmlAttributes = new { @class = "form-control", placeholder = "Điền địa chỉ" } })
+                @Html.ValidationMessageFor(model => model.DiaChiKH, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="dienthoai"><b>Điện thoại:</b></label><br />
+                @Html.EditorFor(model => model.SdtKH, new { htmlAttributes = new { @class = "form-control", type = "text", placeholder = "Điền số điện thoại" } })
+                @Html.ValidationMessageFor(model => model.SdtKH, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="email"><b>Email:</b></label><br />
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", type = "email", placeholder = "Điền email" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="ngaysinh"><b>Ngày sinh:</b></label><br />
+                @Html.EditorFor(model => model.NgaySinh, new { htmlAttributes = new { @class = "form-control", type = "date", placeholder = "mm/dd/yyyy" } })
+                @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="ngaysinh"><b>Giới tính:</b></label>
+                Nam: @Html.RadioButtonFor(model => model.GioiTinh, "Nam", new { htmlAttributes = new { type = "radio", value = "nam" } })
+                Nữ: @Html.RadioButtonFor(model => model.GioiTinh, "Nữ", new { htmlAttributes = new { type = "radio", value = "nu" } })
+                @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger" })
+            </div>
+            <hr>
+
+            <div class="form-group" id="textbox-form">
+                <label for="taikhoan"><b>Tên tài khoản:</b></label><br />
+                @Html.EditorFor(model => model.TaiKhoan, new { htmlAttributes = new { @class = "form-control", placeholder = "Điền tên đăng nhập" } })
+                @Html.ValidationMessageFor(model => model.TaiKhoan, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="matkhau"><b>Mật khẩu:</b></label><br />
+                @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control", type = "password", placeholder = "Điền mật khẩu" } })
+                @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="clearfix">
+                <button type="submit" class="signupbtn">TẠO TÀI KHOẢN</button>
+            </div>
+        }
+
+        <div class="clearfix">
+            <p align="right">@Html.ActionLink("Back to List", "Index")</p>
+        </div>
+    </div>
+</div>

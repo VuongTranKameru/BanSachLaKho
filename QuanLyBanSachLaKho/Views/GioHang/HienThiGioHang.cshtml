@@ -1,0 +1,81 @@
+﻿@using QuanLyBanSachLaKho.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "Giỏ Hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">THÔNG TIN GIỎ HÀNG</h2>
+<table class="table table-hover" style="position: relative">
+    <thead>
+        <tr class="bg-info" style="text-align:center">
+            <th class="col-5" colspan="2">Thông tin sách</th>
+            <th class="col-2">Số lượng</th>
+            <th class="col-2">Đơn giá</th>
+            <th class="col-2">Thành tiền</th>
+            <th class="col-1"></th>
+        </tr>
+    </thead>
+    <tbody class="xemgio">
+        @using (Html.BeginForm("CapNhatMatHang", "GioHang"))
+        {
+            using (Html.BeginForm("XoaNgay", "GioHang"))
+            {
+                foreach (var sach in Model)
+                {
+                    <tr class="table-success">
+                        <td class="col-1">
+                            <a href="@Url.Action("Xem", "Sach", new { id = sach.MaSach })">
+                                <img src="~/image/@sach.HinhSach" width="89" height="150" />
+                            </a>
+                        </td>
+                        <td class="col-4">
+                            <div>
+                                <a href="@Url.Action("Xem", "Sach", new { id = sach.MaSach })">
+                                    <span style="font-size: 20px">@sach.TenSach</span>
+                                    <p style="font-size: 13px; padding-top: 5px">Mã: @sach.MaSach</p>
+                                </a>
+                            </div>
+                        </td>
+                        <td class="col-2">
+                            <div>
+                                <span onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></span>
+                                <input type="number" name="soSach" size="3" min="0" max="999" maxlength="3" readonly value="@sach.LuongMua">
+                                <span onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></span>
+                            </div>
+                        </td>
+                        <td class="col-2">
+                            @sach.DonGia
+                        </td>
+                        <td class="col-2">
+                            @sach.TongTien()
+                        </td>
+                        <td class="col-1">
+                            @Html.ActionLink("Xóa", "XoaNgay", "GioHang", new { MaSP = sach.MaSach, soSach = sach.LuongMua },
+                                            new { @class = "btn btn-danger", role = "button" })
+                            <button type="submit" name="MaSP" value="@(sach.MaSach)" class="btn btn-warning">Thay đổi</button>
+                        </td>
+                    </tr>
+                }
+            }
+        }
+    </tbody>
+    <tr class="table-info" style="font-weight: bold; text-align: right; color: #db2504;">
+        <td colspan="5">Tổng số lượng: @ViewBag.TongSL</td>
+        <td colspan="1">Tổng tiền: @(ViewBag.TongTien)đ</td>
+    </tr>
+
+</table>
+
+<div class="row justify-content-between">
+    <div class="col-10">
+        @using (Html.BeginForm("XoaGioHang", "GioHang"))
+        {
+            //Dung button de lam nut kich hoat cho su kien xoa san pham trong gio hang
+            <button name="xoaSP" value="true" class="btn btn-danger">Xóa Giỏ Hàng</button>
+        }
+    </div>
+    <div class="col-2" style="font-weight:bold; padding-left: 70px;">
+        @Html.ActionLink("ĐẶT HÀNG", "DatHang", null, new { @class = "btn btn-primary" })
+    </div>
+</div>

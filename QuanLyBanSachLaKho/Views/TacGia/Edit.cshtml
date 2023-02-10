@@ -1,0 +1,56 @@
+﻿@model QuanLyBanSachLaKho.Models.TacGia
+
+@{
+    ViewBag.Title = "Chỉnh Sửa Tác Giả " + @Html.DisplayFor(model => model.TenTG);
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link href="~/css/kesach.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+
+<br />
+<h2 style="text-align: center;"><b>CHỈNH SỬA THÔNG TIN TÁC GIẢ</b></h2>
+
+<div class="log">
+    <div class="formdangnhap container">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <p>Đây là mục chỉnh sửa dữ liệu:</p>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.MaTG)
+            <hr />
+
+            <div class="form-group">
+                <label for="tentg"><b>Tên Tác Giả:</b></label><br />
+                @Html.EditorFor(model => model.TenTG, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenTG, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <label for="sinhtg"><b>Ngày Sinh Tác Giả:</b></label><br />
+                @Html.EditorFor(model => model.NgaySinhTG, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                @Html.ValidationMessageFor(model => model.NgaySinhTG, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <label for="motatg"><b>Mô Tả Tác Giả:</b></label><br />
+                @Html.EditorFor(model => model.MoTaTG, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MoTaTG, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <label for="sdttg"><b>Số Điện Thoại Tác Giả:</b></label><br />
+                @Html.EditorFor(model => model.SdtTG, new { htmlAttributes = new { @class = "form-control", type = "text" } })
+                @Html.ValidationMessageFor(model => model.SdtTG, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="clearfixes">
+                <input type="submit" class="btn btn-info" value="LƯU THÔNG TIN TÁC GIẢ" />
+            </div>
+        }
+
+        <div class="clearfix">
+            <p>@Html.ActionLink("Quay về danh sách", "Index")</p>
+        </div>
+    </div>
+</div>

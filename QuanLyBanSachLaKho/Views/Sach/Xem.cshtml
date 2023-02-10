@@ -1,0 +1,58 @@
+﻿@model QuanLyBanSachLaKho.Models.Sach
+
+@{
+    ViewBag.Title = Html.DisplayFor(model => model.TenSach);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="giay">
+    <table>
+        <tr>
+            <td class="bookcover"><img src="~/image/@Model.HinhSach" /></td>
+            <td class="bookinfo">
+                <h2>
+                    @Html.DisplayFor(model => model.TenSach)
+                </h2>
+                <ul>
+                    <li>Tác giả: @Html.DisplayFor(model => model.TacGia.TenTG)</li>
+                    <li>Thể loại: @Html.DisplayFor(model => model.TheLoai.TenTheLoai)</li>
+                    <li>Nhà xuất bản: @Html.DisplayFor(model => model.NhaXuatBan.TenNXB)</li>
+                    <li>Kích thước: @Html.DisplayFor(model => model.KichThuoc)</li>
+                    <li>Số trang: @Html.DisplayFor(model => model.SoTrang)</li>
+                    <li>Ngày phát hành: @(Model.NgayPhatHanh.ToString().Split(' ')[0])</li>
+                </ul>
+            </td>
+            <td class="bookmoney">
+                <div class="giabia">Giá bìa: @(Model.GiaBia) VND<br /></div>
+                <div class="giaban">
+                    Giá bán: @(Model.DonGia) VND<br />
+                </div>
+                @using (Html.BeginForm("ThemSanPhamVaoGio", "GioHang"))
+                {
+                    <div class="soluong">
+                        <div>
+                            Số lượng:
+                            <span onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></span>
+                            <input type="number" name="soSach" placeholder="000" size="3" min="0" max="999" maxlength="3" value="1">
+                            <span onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></span>
+                        </div>
+                    </div>
+                    <div class="nutmuahang">
+                        @Html.ActionLink("Mua hàng", "MuaNgay", "GioHang", new { MaSP = Model.MaSach },
+                        htmlAttributes: new { @class = "submua", @role = "button" })
+                    </div>
+                    <div class="nutthemgio">
+                        <button type="submit" name="MaSP" value="@(Model.MaSach)" class="subgio">Thêm vào <br /> giỏ hàng</button>
+                    </div>
+                }
+            </td>
+        </tr>
+    </table>
+    <p class="bookdescribe">
+        <b>GIỚI THIỆU TÁC PHẨM </b>
+        <div class="demonstrationdes">@Html.DisplayFor(model => model.MoTaSach)</div>
+        <br />
+        <div style="padding-bottom: 500px"></div>
+    </p>
+</div>

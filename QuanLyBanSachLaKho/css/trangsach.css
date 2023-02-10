@@ -1,0 +1,155 @@
+﻿/*Can kho giay cua trang chi tiet sach*/
+.giay {
+    border: 5px solid gray;
+    width: auto;
+    height: auto;
+    background-color: #eded8a;
+    color: black;
+}
+
+/*Chinh anh bia cua sach*/
+.giay img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: cover;
+    margin: 20px;
+}
+
+/*Khuon cua phan tren*/
+.giay tr td{
+    border-bottom: 2px solid gray;
+}
+
+.bookcover {
+    width: 25%;
+    margin: 20px;
+}
+
+.bookinfo{
+    width: 30%;
+    vertical-align: top;
+}
+.bookinfo a {
+    color: blue;
+    text-decoration: none;
+}
+.bookinfo h2 {
+    margin: 20px 5px 0 5px;
+    font-weight: 900; 
+    text-transform: uppercase;
+}
+.bookinfo ul{
+    margin: 30px -20px 50px 0;
+    list-style-type: none;
+    text-align: left;
+    font-size: 20px;
+}
+.bookinfo li {
+    padding: 0 0px 6px 0;
+    margin-right: 100px;
+}
+.bookmoney {
+    padding: 80px 50px 50px 0;
+    vertical-align: middle;
+}
+
+/*Chinh ben trong cua phan tren*/
+.giabia {
+    margin: 0 5px 2px 0;
+    padding: 5px;
+    border: 1px solid #f5deb3;
+    font-size: 24px;
+    background-color: #f5deb3;
+    color: gray;
+}
+
+.giaban {
+    margin: 5px 5px 10px 0;
+    padding: 5px;
+    border: 1px solid #c35817;
+    font-size: 24px;
+    background-color: #c35817;
+    color: white;
+}
+
+.soluong {
+    margin-top: 20px;
+    padding: 7px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/*chinh sua nut mua hang*/
+.nutmuahang {
+    margin-top: 20px;
+    padding: 10px 0 10px 0;
+    width: 100%;
+    border: none;
+    background-color: mediumseagreen;
+    cursor: pointer;
+}
+.nutmuahang:hover {
+    background-color: #36a165;
+}
+.submua:link, .submua:visited {
+    display: block;
+    cursor: pointer;
+    font-size: 26px;
+    color: white;
+    text-decoration: none;
+}
+
+/*.nutthemgio {
+    margin-top: 5px;
+    width: 100%;
+    border: none;
+    background-color: forestgreen;
+    cursor: pointer;
+}
+.nutthemgio:hover {
+    background-color: #2f7e2f;
+}
+.subgio:link, .subgio:visited {
+    display: block;
+    cursor: pointer;
+    font-size: 26px;
+    color: white;
+    text-decoration: none;
+    /*tag <pre> dung de cach dong, trong asp net go /n vao vi tri muon cach
+     *vd: "Them vao /n gio hang"*\
+    white-space: pre;
+}*/
+.subgio {
+    /*thiet ke nut gio hang*/
+    margin-top: 5px;
+    width: 100%;
+    border: none;
+    background-color: forestgreen;
+    cursor: pointer;
+    /*thiet ke chu gio hang*/
+    font-size: 26px;
+    color: white;
+    text-decoration: none;
+    white-space: pre;
+}
+.subgio:hover {
+    background-color: #2f7e2f;
+}
+
+/*Khuon cua phan duoi*/
+.bookdescribe {
+    margin: 50px 50px 20px 50px;
+    font-size: 20px;
+}
+
+.demonstrationdes {
+    margin: 0 50px 0 50px;
+    font-size: 18px;
+}
+.cungtg img {
+    max-width: 10%;
+    max-height: 10%;
+    object-fit: cover;
+    margin: 20px;
+}

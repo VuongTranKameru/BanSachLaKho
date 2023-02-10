@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Đăng Nhập";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="log" style="color:black;height:530px">
+    <div class="imgcontainer"></div>
+    @using (Html.BeginForm("DangNhap", "NguoiDung", FormMethod.Post))
+    {
+        <div class="validationViewbag">@ViewBag.ThongBao</div>
+        @Html.ValidationSummary(true, null, new { @class = "notif" })
+        <div class="login-box">
+            <div class="login-left">
+                <h1>Đăng nhập</h1>
+
+                <label for="dangnhap">Tên đăng nhập:</label>
+                @Html.TextBox("TaiKhoan", null, new
+                {
+                    @class = "form-control",
+                    @id = "dangnhap",
+                    @name = "username",
+                    @placeholder = "Tên đăng nhập",
+                    required = "required"
+                })
+                <label for="matkhau">Mật khẩu:</label>
+                @Html.Password("Matkhau", null, new
+                {
+                    @class = "form-control",
+                    @id = "matkhau",
+                    @name = "password",
+                    @placeholder = "Mật khẩu",
+                    required = "required"
+                })
+
+                <input type="submit" name="signup_submit" value="Đăng nhập" />
+                <p>Chưa có tài khoản? Hãy ấn @Html.ActionLink("Đăng ký ngay", "DangKy", "NguoiDung")</p>
+            </div>
+
+            <div class="login-right">
+                <span class="loginwith" style="color:black">Đăng nhập bằng<br />tài khoản khác</span>
+                <button class="social-signin facebook">Đăng nhập Facebook</button>
+                <button class="social-signin twitter">Đăng nhập Twitter</button>
+                <button class="social-signin google">Đăng nhập Google+</button>
+            </div>
+            <div class="login-or">Hoặc</div>
+        </div>
+    }
+</div>

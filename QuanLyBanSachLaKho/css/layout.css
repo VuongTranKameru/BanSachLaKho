@@ -1,0 +1,198 @@
+﻿/*asp-append-version: true de cap nhat file .css*/
+.body-layout {
+	font-family: tahoma;
+	font-size: 16px;
+	color: white;
+	width: auto;
+	margin: auto;
+	background-color: #eda774;
+	background-image: url('../image/dark_wooden_texture.jpg');
+}
+
+/*Khung dang nhap nguoi dung*/
+.customer {
+	height: 27px;
+	background-color: #eda774;
+	color: brown;
+	width: 100%;
+}
+.customer a:link{
+	color: brown;
+	text-decoration: none;
+}
+.customer a:visited{
+	color: brown;
+	text-decoration: none;
+}
+.customer a:hover{
+	color: brown;
+	text-decoration: underline;
+}
+.customer a:active{
+	color: white;
+	text-decoration: underline;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+.dropdown-toggle:hover{
+	text-decoration: underline;
+}
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #eda774;
+	min-width: fit-content;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+.dropdown-content a {
+	color: black;
+	padding: 12px 13px;
+	text-decoration: none;
+	display: block;
+}
+.dropdown-content a:hover {
+	background-color: #eda774;
+}
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/*Gio hang*/
+.badge {
+	padding-left: 9px;
+	padding-right: 9px;
+	border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+	background-color: transparent;
+}
+
+#lblCartCount {
+	font-size: 13px;
+	background-color: #db2504;
+	color: #fff;
+	padding: 0 4px;
+	vertical-align: top;
+	margin-left: -10px;
+}
+
+/*Banner*/
+.banner {
+	width: 100%;
+	height: 150px;
+	overflow: hidden;
+}
+
+/*Thanh lua chon*/
+.menuplace{
+	background: #e49b0f;
+}
+.menu{
+	display: flex;
+	flex-direction: row;
+	height: 40px;
+	background: #e49b0f;
+	width: 100%;
+}
+.menu div{
+	text-align: center;
+	list-style: none;
+}
+.menu div a{
+	display: block;
+	text-decoration: none;
+	line-height: 38px;
+	color: black;
+	font-weight: bold;
+	font-size: 25px;
+	padding: 0px 45px 0px 45px;
+}
+.menu div:hover{
+	color: black;
+	background: #d6910d;
+	padding: -15px 0 -15px 0;
+}
+.list{
+	border-right: 3px solid #f75a16;
+	margin-left: 75px;
+	width: 30%;
+}
+.list:hover .submenu{
+	display: block;
+}
+.list:hover ul.dropdown-menu{
+	width: 29%;
+	background-color: sandybrown;
+	text-align: center;
+}
+.submenu {
+	/*display: none;
+	position: absolute;
+	background-color: orange;
+	width: 27.5%;
+	z-index: 1;
+	list-style: none;
+	text-align: center;*/
+}
+.submenu li{
+	border-top: 1px solid red;
+	vertical-align: middle;
+	padding: 1px 0 0 0;
+	height: 40px;
+	font-style: italic;
+}
+.submenu li:hover{
+	color: black;
+	background-color: darkorange;
+	padding: -15px 0 -15px 0;
+}
+.cover{
+	border-right: 3px solid #f75a16;
+	width: 30%;
+
+}
+.intro{
+	margin-right: 75px;
+	width: 30%;
+}
+
+/*Quang cao*/
+.ad {
+	margin: 10px 280px 5px 280px;
+	height: 350px;
+	/*background: #cd8500;*/
+}
+.ad img{
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover;
+}
+
+/*Thanh tim kiem*/
+
+/*Footer*/
+.footer{
+	height: 130px;
+	font-size: 12px;
+	background: #8b4513;
+}
+
+.footer a:link{
+	color: white;
+	text-decoration: none;
+}
+.footer a:visited{
+	color: white;
+	text-decoration: none;
+}
+.footer a:hover{
+	color: black;
+	background-color: white;
+	text-decoration: none;
+}

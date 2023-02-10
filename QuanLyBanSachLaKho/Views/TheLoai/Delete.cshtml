@@ -1,0 +1,36 @@
+﻿@model QuanLyBanSachLaKho.Models.TheLoai
+
+@{
+    ViewBag.Title = "Xóa Thể Loại";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link href="~/css/kesach.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+
+<br />
+<h2 style="text-align: center;"><b>BẠN CÓ CHẮC LÀ MUỐN XÓA THỂ LOẠI NÀY?</b></h2>
+
+<div class="log">
+    <div class="formdangnhap container">
+        <dl class="formuser">
+            <dt>
+                Tên Thể Loại:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenTheLoai)
+            </dd>
+
+        </dl>
+        <p>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Xóa thể loại" class="btn btn-danger" />
+                    <a href="/TheLoai" role="button" class="btn btn-secondary">Quay về danh sách</a>
+                </div>
+            }
+        </p>
+    </div>
+</div>

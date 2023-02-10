@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c97ca1c09d914b16a9186bbf32afa005" Name="Diagram1">
+        <EntityTypeShape EntityType="QLLaKhoModel.CTDonHang" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLLaKhoModel.DonHang" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLLaKhoModel.KhachHang" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLLaKhoModel.NhaXuatBan" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLLaKhoModel.Sach" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLLaKhoModel.TacGia" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLLaKhoModel.ThanhToan" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLLaKhoModel.TheLoai" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <AssociationConnector Association="QLLaKhoModel.FK_CTDonHang_DonHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QLLaKhoModel.FK_CTDonHang_Sach" ManuallyRouted="false" />
+        <AssociationConnector Association="QLLaKhoModel.FK_DonHang_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QLLaKhoModel.FK_DonHang_MaHTTT" ManuallyRouted="false" />
+        <AssociationConnector Association="QLLaKhoModel.FK_Sach_NhaXuatBan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLLaKhoModel.FK_Sach_TacGia" ManuallyRouted="false" />
+        <AssociationConnector Association="QLLaKhoModel.FK_Sach_TheLoai" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QLLaKhoModel.sysdiagram" Width="1.5" PointX="5.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

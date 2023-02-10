@@ -1,0 +1,138 @@
+﻿@model QuanLyBanSachLaKho.Models.DonHang
+
+@{
+    ViewBag.Title = "Thông Tin Chi Tiết Về Đơn Hàng " + @Html.DisplayFor(model => model.MaDH);
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link href="~/css/kesach.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+
+<br />
+<h2 style="text-align: center;"><b>THÔNG TIN CHI TIẾT ĐƠN HÀNG</b></h2>
+
+<div class="log">
+    <div class="formdangnhap container">
+        <dl class="formuser">
+            <dt>
+                Mã Đơn Hàng:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaDH)
+            </dd>
+
+            <dt>
+                Ngày Đặt Hàng:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayDH)
+            </dd>
+
+            <dt>
+                Giá Đơn Hàng Sau Khi Thanh Toán:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GiaDH)
+            </dd>
+
+            <dt>
+                Tên Người Nhận:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenNguoiNhan)
+            </dd>
+
+            <dt>
+                Địa Chỉ Giao:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DiaChiGiao)
+            </dd>
+
+            <dt>
+                Số Điện Thoại Người Nhận:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SdtNguoiNhan)
+            </dd>
+
+            <dt>
+                Người Đặt Hàng:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KhachHang.TaiKhoan)
+            </dd>
+
+            <dt>
+                Hình Thức Thanh Toán:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ThanhToan.TenHTTT)
+            </dd>
+
+        </dl>
+
+        <h4>Danh Sách Các Đơn Hàng Đã Đặt Mua:</h4>
+        @{ int itemCount = 0; }
+        <table class="table table-responsive">
+            @foreach (var item in Model.CTDonHangs)
+            {
+                if (itemCount == 0)
+                {
+                    <tr class="bg-info">
+                        <th>
+                            Mã Đơn Hàng
+                        </th>
+                        <th>
+                            Mã Sách
+                        </th>
+                        <th>
+                            Tên Sách
+                        </th>
+                        <th>
+                            Số Lượng Mua
+                        </th>
+                        <th>
+                            Thành Tiền
+                        </th>
+                    </tr>
+                }
+                itemCount += 1;
+                <tr class="table-info">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaDH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaSach)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sach.TenSach)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoLuongMua)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ThanhTien)
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <hr />
+        <div class="text-left text-uppercase">
+            <b>TỔNG SỐ MẶT HÀNG: @(itemCount)</b>
+            <b>Tổng tiền: @ViewBag.TongTien</b>
+        </div>
+        <hr />
+
+        <p>
+            <a href="/DonHang" role="button" class="btn btn-secondary">Quay về danh sách</a>
+        </p>
+    </div>
+</div>

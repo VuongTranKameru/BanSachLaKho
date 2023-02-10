@@ -1,0 +1,80 @@
+﻿/*Khi nhan vao mot cot thi se chuyen den trang xem chi tiet truyen do*/
+.xemgio a:link, .xemgio a:visited{
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.xemgio div {
+    display: block;
+    cursor: pointer;
+    width: stretch;
+}
+
+.xemgio tr td:nth-child(2){
+    text-align: left;
+    vertical-align: top;
+    padding: 20px 30px 0 30px;
+}
+
+/*nut chinh len xuong so luong*/
+.xemgio tr td:nth-child(3) div { 
+    display: inline-flex;
+} 
+ 
+.xemgio, .xemgio * { 
+    box-sizing: border-box; 
+} 
+ 
+/*button thay bang span vi button se trigger event httpost*/
+.xemgio input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    /*appearance: textfield;*/
+}
+
+.xemgio [type=number]::-webkit-inner-spin-button,
+.xemgio [type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.xemgio tr td:nth-child(3) span { 
+    -webkit-appearance: none; 
+    background-color: transparent; 
+    border: none; 
+    align-items: center; 
+    justify-content: center; 
+    width: 2rem; 
+    height: 2rem; 
+    cursor: pointer; 
+    margin: 0; 
+    position: relative; 
+
+    padding-top: 15px;
+} 
+ 
+.xemgio tr td:nth-child(3) span:before, 
+.xemgio tr td:nth-child(3) span:after { 
+    display: inline-block; 
+    position: absolute; 
+    content: ''; 
+    width: 1rem; 
+    height: 2px; 
+    background-color: #212121; 
+    transform: translate(-50%, -50%); 
+} 
+.xemgio tr td:nth-child(3) span.plus:after { 
+    transform: translate(-50%, -50%) rotate(90deg); 
+} 
+ 
+.xemgio input[type=number] { 
+    font-family: sans-serif; 
+    max-width: 4.5rem; 
+    padding: .3rem; 
+    border: solid #ddd; 
+    border-width: 0 2px; 
+    font-size: 1.5rem; 
+    height: 2rem; 
+    font-weight: bold; 
+    text-align: center; 
+}

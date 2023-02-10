@@ -1,0 +1,32 @@
+﻿@model IEnumerable<QuanLyBanSachLaKho.Models.KhachHang>
+
+@if (ViewBag.UserLog)
+{
+    <span style="cursor:pointer;">
+        <span class="dropdown">
+            <span class="dropdown-toggle">
+                Xin chào, @ViewBag.UserName
+            </span>
+            <span class="dropdown-content">
+                @foreach (var item in Model) {
+                    if (item.TaiKhoan == ViewBag.UserName)
+                    {
+                        @Html.ActionLink("Thông tin cá nhân", "Edit", "KhachHang", 
+                            new { id = item.MaKH }, new { @class = "drpdwn-item" })
+                        <a href="#">Lịch sử mua hàng</a>
+                        break;
+                    }
+                }
+            </span>
+        </span> |
+        <a href="/NguoiDung/DangXuat">Đăng xuất </a> &emsp;
+    </span>
+}
+else
+{
+    <span>
+        <a href="/NguoiDung/DangNhap">Đăng nhập </a> |
+        <a href="/NguoiDung/DangKy">Đăng ký </a> &emsp;
+    </span>
+}
+@Html.Action("NutGioHang", "GioHang") &nbsp;&emsp;

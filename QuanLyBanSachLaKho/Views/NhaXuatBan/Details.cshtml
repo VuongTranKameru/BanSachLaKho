@@ -1,0 +1,43 @@
+﻿@model QuanLyBanSachLaKho.Models.NhaXuatBan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NhaXuatBan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNXB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChiNXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChiNXB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SdtNXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SdtNXB)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaNXB }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

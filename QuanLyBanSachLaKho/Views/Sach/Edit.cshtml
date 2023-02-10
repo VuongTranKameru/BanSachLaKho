@@ -1,0 +1,105 @@
+﻿@model QuanLyBanSachLaKho.Models.Sach
+
+@{
+    ViewBag.Title = "Chỉnh Sửa Sách " + @Html.DisplayFor(model => model.TenSach);
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link href="~/css/kesach.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+
+<br />
+<h2 style="text-align: center;"><b>CHỈNH SỬA THÔNG TIN SÁCH</b></h2>
+
+<div class="log">
+    <div class="formdangnhap container">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <p>Đây là mục chỉnh sửa dữ liệu:</p>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.MaSach)
+            <hr />
+
+            <div class="form-group" id="textbox-form">
+                <label for="tensach"><b>Tên Sách:</b></label><br />
+                @Html.EditorFor(model => model.TenSach, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenSach, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="kichthuoc"><b>Kích Thước:</b></label><br />
+                @Html.EditorFor(model => model.KichThuoc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.KichThuoc, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="sotrang"><b>Số Trang:</b></label><br />
+                @Html.EditorFor(model => model.SoTrang, new { htmlAttributes = new { @class = "form-control", type = "text" } })
+                @Html.ValidationMessageFor(model => model.SoTrang, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="ngayphathanh"><b>Ngày Phát Hành:</b></label><br />
+                @Html.EditorFor(model => model.NgayPhatHanh, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                @Html.ValidationMessageFor(model => model.NgayPhatHanh, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="giabia"><b>Giá Bìa:</b></label><br />
+                @Html.EditorFor(model => model.GiaBia, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GiaBia, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="dongia"><b>Đơn Giá:</b></label><br />
+                @Html.EditorFor(model => model.DonGia, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DonGia, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="soluongsach"><b>Số Lượng Sách:</b></label><br />
+                @Html.EditorFor(model => model.SoLuongSach, new { htmlAttributes = new { @class = "form-control", type = "text" } })
+                @Html.ValidationMessageFor(model => model.SoLuongSach, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="motasach"><b>Mô Tả Sách:</b></label><br />
+                <textarea class="form-control text-box multi-line" id="MoTaSach" name="MoTaSach" rows="20"></textarea>
+                @Html.ValidationMessageFor(model => model.MoTaSach, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="hinhsach"><b>Hình Sách:</b></label>
+                @Html.DisplayFor(model => model.HinhSach)<br />
+                @Html.EditorFor(model => model.HinhSach, new { htmlAttributes = new { @type = "file" } })
+                @Html.ValidationMessageFor(model => model.HinhSach, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="nxb"><b>Nhà Xuất Bản:</b></label><br />
+                @Html.DropDownList("MaNXB", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MaNXB, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="tg"><b>Tác Giả:</b></label><br />
+                @Html.DropDownList("MaTG", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MaTG, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group" id="textbox-form">
+                <label for="tl"><b>Thể Loại:</b></label><br />
+                @Html.DropDownList("MaTheLoai", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MaTheLoai, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="clearfixes">
+                <input type="submit" class="btn btn-info" value="LƯU THÔNG TIN CUỐN SÁCH" />
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Quay về danh sách", "Index")
+        </div>
+    </div>
+</div>

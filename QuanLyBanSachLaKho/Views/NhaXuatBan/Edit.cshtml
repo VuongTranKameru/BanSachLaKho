@@ -1,0 +1,50 @@
+﻿@model QuanLyBanSachLaKho.Models.NhaXuatBan
+
+@{
+    ViewBag.Title = "Chỉnh Sửa Nhà Xuất Bản " + Html.DisplayFor(model => model.TenNXB);
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link href="~/css/kesach.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+
+<br />
+<h2 style="text-align: center;"><b>CHỈNH SỬA THÔNG TIN NHÀ XUẤT BẢN</b></h2>
+
+<div class="log">
+    <div class="formdangnhap container">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <p>Đây là mục chỉnh sửa dữ liệu:</p>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.MaNXB)
+            <hr />
+
+            <div class="form-group">
+                <label for="tennxb"><b>Tên Nhà Xuất Bản:</b></label><br />
+                @Html.EditorFor(model => model.TenNXB, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenNXB, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <label for="diachinxb"><b>Địa Chỉ Nhà Xuất Bản:</b></label><br />
+                @Html.EditorFor(model => model.DiaChiNXB, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DiaChiNXB, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <label for="diachinxb"><b>Địa Chỉ Nhà Xuất Bản:</b></label><br />
+                @Html.EditorFor(model => model.SdtNXB, new { htmlAttributes = new { @class = "form-control", type = "text" } })
+                @Html.ValidationMessageFor(model => model.SdtNXB, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="clearfixes">
+                <input type="submit" class="btn btn-info" value="LƯU THÔNG TIN NHÀ XUẤT BẢN"/>
+            </div>
+        }
+
+        <div class="clearfix">
+            <p>@Html.ActionLink("Quay về danh sách", "Index")</p>
+        </div>
+    </div>
+</div>

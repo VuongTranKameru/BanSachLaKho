@@ -1,0 +1,144 @@
+﻿/*asp-append-version: true de cap nhat file .css*/
+/*Bang trinh bay sach*/
+.main table, .main tr, .main td {
+    border-collapse: collapse;
+    border-left-style: none;
+    border-right-style: none;
+}
+
+.main table {
+    width: 100%;
+    height: auto /*1100px*/;
+}
+
+.main tr, td {
+    margin: 50px 0 50px 0;
+    text-align: left;
+    text-align: center;
+    vertical-align: middle;
+    width: 20%;
+}
+
+/*Thiet ke trang sach*/
+.main img {
+    /*max-width: 70%;
+    max-height: 70%;*/ 
+    width: 200px;
+    height: 290px;
+    object-fit: cover;
+    padding: 20px;
+}
+
+/*Thiet ke bia sach*/
+.bookshelf {
+    border-top-color: #59b50e;
+    border-top-width: 6px;
+    padding: 70px;
+}
+
+.top {
+    height: 50px;
+    border-top-style: groove;
+    border-top-color: coral;
+    border-top-width: 7px;
+    font-size: 30px;
+    background: #db2504;
+}
+
+.middle {
+    border: 5px solid #8b5a2b;
+}
+
+.subbookshelf {
+    border-top-color: #59b50e;
+    border-top-width: 6px;
+    border-bottom-color: #59b50e;
+    border-bottom-width: 6px;
+}
+
+#tooltip {
+    display: inline-block;
+}
+
+#tooltip #tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    top: 100%;
+    margin-left: 10px;
+}
+
+#tooltip:hover #tooltiptext {
+    visibility: visible;
+}
+
+/*Popup sach*/
+.introduce {
+    position: absolute;
+    list-style-type: none;
+    margin: -20px 0 0 10px;
+    width: 250px;
+    text-align: left;
+    border-radius: 6px;
+    background-color: #fffdd0;
+}
+
+.tacpham {
+    margin: 5px 10px 3px -25px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.tacgia {
+    margin: 0px 10px 0px -25px;
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+    color: black;
+}
+
+.gia {
+    padding: 5% 0% 2% 31%;
+    font-size: 16px;
+    text-decoration: underline;
+    color: red;
+}
+
+.giamgia {
+    padding: 0% 0% 2% 31%;
+    font-size: 16px;
+    text-decoration: line-through black;
+    color: red;
+}
+
+.mua {
+    margin: 2% 27% 2% 25%;
+    padding: 4px 5px 4px 5px;
+    border: none;
+    background-color: #50C878;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+}
+.mua:link, .mua:visited{
+    text-decoration: none;
+    color: white;
+}
+
+.gio {
+    margin: 0% 0 2% 11%;
+    padding: 4px 4px 4px 0px;
+    border: none;
+    background-color: #50C878;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+}
+.gio:link, .gio:visited {
+    text-decoration: none;
+    padding-left: 4px;
+    color: white;
+}

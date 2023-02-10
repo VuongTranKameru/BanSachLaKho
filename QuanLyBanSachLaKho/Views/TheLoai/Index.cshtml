@@ -1,0 +1,52 @@
+﻿@model IEnumerable<QuanLyBanSachLaKho.Models.TheLoai>
+
+@{
+    ViewBag.Title = "Danh Sách Thể Loại";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>QUẢN LÝ THỂ LOẠI</h2>
+
+<div style="padding-bottom:10px;">
+    <a class="btn btn-light" href='@Url.Action("Create", "TheLoai")' role="button">
+        + Thêm Thể Loại Mới
+    </a>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <tr class="bg-warning">
+            <th>
+                Mã Thể Loại
+            </th>
+            <th class="col-9">
+                Tên Thể Loại
+            </th>
+            <th class="col-1"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="alert-warning">
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaTheLoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenTheLoai)
+                </td>
+                <td>
+                    <a href='@Url.Action("Edit", "TheLoai", new { id = item.MaTheLoai })'>
+                        <i class="icon icon-wrap nalika-edit"></i>
+                    </a>
+                    <a href='@Url.Action("Details", "TheLoai", new { id = item.MaTheLoai })'>
+                        <i class="icon icon-wrap nalika-info"></i>
+                    </a>
+                    <a href='@Url.Action("Delete", "TheLoai", new { id = item.MaTheLoai })'>
+                        <i class="icon icon-wrap nalika-delete-button"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

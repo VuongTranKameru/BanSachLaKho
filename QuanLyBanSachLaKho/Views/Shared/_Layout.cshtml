@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="~/image/leaf_LOGO.png">
+
+    <link href="~/css/layout.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/kesach.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/trangsach.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/soluong.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/giomuasam.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/sign.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+    <script src="~/css/effect.js" type="text/javascript"></script>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="body-layout">
+    <div class="customer" style="margin-top: -50px;">
+        <p align="right">
+            @Html.Action("Index", "NguoiDung")
+        </p>
+    </div>
+    <div class="banner"><img src="~/image/leaves.png" /></div>
+    <div class="menuplace sticky-top">
+        <div class="menu">
+            <div class="list">
+                <a href="#">Danh mục sách</a>
+                @Html.Action("MucTheLoai", "Home")
+            </div>
+            <div class="cover">
+                @Html.ActionLink("Trang Chủ", "Index", "Home")
+            </div>
+            <div class="intro">
+                <a href="#">Giới thiệu</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad">
+        <p align="center"><img id="runningads" src="~/image/huucaoco.jpg" /></p>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+    
+    <div class="footer" style="margin-bottom: -50px">
+        <p style="float: left;width: 30%;" align="center">
+            <img src="~/image/leaves - end.png" width="250" height="103" style="padding-top: 15px" />
+        </p>
+        <div style="float: left; width: 40%;" align="center">
+            <div style="margin-top: 10px">
+                &copy; @DateTime.Now.Year - Nhà xuẩt bản Lá Khô. <br />
+                Nhà sách chuyên bán những tác phẩm văn học Việt Nam <br />
+                Địa chỉ: 55 Quang Trung, Nguyễn Du, Hai Bà Trưng, Hà Nội <br />
+                Điện thoại: 0243 943 4490 <br />
+                Email: nhaxuatbanlakho@gmail.com <br />
+                <a href="#">Liên hệ với chúng tôi để cập nhật và giải đáp thắc mắc</a>
+            </div>
+        </div>
+        <div id="pls" style="float:right; padding: 10px 0 0 30px; margin-right: 50px;">
+            <p>HỖ TRỢ THANH TOÁN QUA</p>
+            <img src="~/image/momo.jfif" width="50" height="50" />
+            <img src="~/image/visa.png" width="60" height="60" />
+            <img src="~/image/zalopay.jpg" width="50" height="50" />&nbsp;&emsp;
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

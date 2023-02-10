@@ -1,0 +1,55 @@
+﻿@model QuanLyBanSachLaKho.Models.NhaXuatBan
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link href="~/css/kesach.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+
+<br />
+<h2 style="text-align: center;"><b>THÊM NHÀ XUẤT BẢN MỚI</b></h2>
+
+<div class="log">
+    <div class="formdangnhap container">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <p>Vui lòng nhập dữ liệu vào đây:</p>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <hr />
+
+            <div class="form-group">
+                <label for="manxb"><b>Mã Nhà Xuất Bản:</b></label><br />
+                @Html.EditorFor(model => model.MaNXB, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MaNXB, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <label for="tennxb"><b>Tên Nhà Xuất Bản:</b></label><br />
+                @Html.EditorFor(model => model.TenNXB, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenNXB, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <label for="diachinxb"><b>Địa Chỉ Nhà Xuất Bản:</b></label><br />
+                @Html.EditorFor(model => model.DiaChiNXB, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DiaChiNXB, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <label for="diachinxb"><b>Địa Chỉ Nhà Xuất Bản:</b></label><br />
+                @Html.EditorFor(model => model.SdtNXB, new { htmlAttributes = new { @class = "form-control", type = "text" } })
+                @Html.ValidationMessageFor(model => model.SdtNXB, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="clearfix">
+                <button type="submit" class="signupbtn">THÊM MỚI NHÀ XUẤT BẢN</button>
+            </div>
+        }
+
+        <div class="clearfix">
+            <p>@Html.ActionLink("Quay về danh sách", "Index")</p>
+        </div>
+    </div>
+</div>

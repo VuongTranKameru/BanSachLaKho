@@ -1,0 +1,15 @@
+﻿@model IEnumerable<QuanLyBanSachLaKho.Models.DonHang>
+
+@{
+    ViewBag.Title = "LichSuGiaoHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LichSuGiaoHang</h2>
+
+<div>
+    @foreach (var i in Model)
+    {
+        <div>@i.MaDH</div>
+    }
+</div>

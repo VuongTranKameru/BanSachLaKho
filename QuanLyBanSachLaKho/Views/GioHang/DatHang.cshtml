@@ -1,0 +1,68 @@
+﻿@using QuanLyBanSachLaKho.Models
+@model List<GioHang>
+
+@{
+    ViewBag.Title = "Đặt Hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    KhachHang khach = Session["TaiKhoan"] as KhachHang;
+}
+
+<h2 style="text-align:center">THÔNG TIN GIỎ HÀNG</h2>
+<table class="table table-bordered table-danger">
+    <thead>
+        <tr>
+            <th>Mã sách</th>
+            <th>Tên sách</th>
+            <th>Ảnh bìa</th>
+            <th>Số lượng</th>
+            <th class="col-3">Đơn giá</th>
+            <th class="col-3">Thành tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sach in Model)
+        {
+            <tr>
+                <td class="col-1">@sach.MaSach</td>
+                <td class="col-2">@sach.TenSach</td>
+                <td><img src="~/image/@sach.HinhSach" style="width:100%" /></td>
+                <td class="col-1">@sach.LuongMua</td>
+                <td class="col-2">@String.Format("{0:0,0}", sach.DonGia)</td>
+                <td class="col-2">@String.Format("{0:0,0}", sach.TongTien())</td>
+            </tr>
+        }
+        <tr style="font-weight:bold; text-align:right; color:red;">
+            <td colspan="4">Tổng số lượng: @ViewBag.TongSL</td>
+            <td colspan="5">Tổng tiền: @ViewBag.TongTien</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 style="text-align:center">THÔNG TIN KHÁCH HÀNG</h2>
+<table class="table table-bordered table-light">
+    <tr>
+        <td>Họ: </td>
+        <td>@khach.HoDemKH</td>
+    </tr>
+    <tr>
+        <td>Tên đệm và tên: </td>
+        <td>@khach.TenKH</td>
+    </tr>
+    <tr>
+        <td>Địa chỉ: </td>
+        <td>@khach.DiaChiKH</td>
+    </tr>
+    <tr>
+        <td>Điện thoại: </td>
+        <td>@khach.SdtKH</td>
+    </tr>
+    <tr>
+        <td>Ngày đặt: </td>
+        <td>@DateTime.Now.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: center;">
+            @Html.ActionLink("ĐỒNG Ý ĐẶT HÀNG", "DongYDatHang", null, new {  @class = "btn btn-primary" })
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,286 @@
+﻿/*Khung dang ky thanh vien*/
+.log {
+    border: 5px solid gray;
+    margin: 30px 100px 50px 100px;
+    background-color: #fce6b1;
+    height: fit-content;
+    color: black;
+}
+
+#textbox-form {
+    margin-bottom: 13px;
+}
+
+.log input[type=text], .log input[type=password],
+.log input[type=email], .log input[type=date], .log textarea,
+.log select, .log option{
+    width: 100%;
+    /*max-width cua input mac dinh trong bootstrap la 250px, 
+      phai chinh lai o ../Content/site.css de bootstrap co the keo dan ra*/
+    max-width: 98%;
+    padding: 15px;
+    margin: 5px 5px 5px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+.log input[type=text]:focus, .log input[type=password]:focus, .log input[type=email]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.log input[type=radio]{
+    padding: 15px;
+    margin: 5px 5px 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+.log hr {
+    border: 1px solid orange;
+    margin-bottom: 25px;
+}
+.log button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.log button:hover {opacity:1;}
+.clearfixes input {
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.signupbtn {
+    float: left;
+    width: 100%;
+}
+
+.formdangnhap {
+    padding: 26px;
+    height: auto;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media screen and (max-width: 300px) {
+.signupbtn {width: 100%;}
+}
+
+/*Thong bao khi co loi dang nhap/dang ky*/
+.validationViewbag {
+    position: relative;
+    margin: 0;
+    list-style-type: none;
+    background-color: #eda774;
+    color: #db2504;
+    text-align: center;
+    font-style: italic;
+}
+
+.validationMessange {
+    display: initial;
+    list-style-type: none;
+    margin-top: 10px;
+    padding-left: 7px;
+    color: red;
+}
+
+/*Khung dang nhap vao he thong*/
+.login-box {
+  position: relative;
+  margin: 5% auto;
+  width: 600px;
+  height: 400px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.login-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+}
+
+.login-left h1 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 28px;
+}
+
+.login-left input[type="text"], .login-left input[type="password"] {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.login-left input[type="text"]:focus, .login-left input[type="password"]:focus {
+  border-bottom: 2px solid #16a085;
+  color: #16a085;
+  transition: 0.2s ease;
+}
+
+.login-left input[type="submit"] {
+  margin-top: 28px;
+  width: 120px;
+  height: 32px;
+  background: #16a085;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+.login-left input[type="submit"]:hover, .login-left input[type="submit"]:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+.login-left input[type="submit"]:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+.login-or {
+  position: absolute;
+  top: 180px;
+  left: 280px;
+  width: 40px;
+  height: 40px;
+  background: #DDD;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  line-height: 40px;
+  text-align: center;
+}
+
+.login-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+  background: url('https://goo.gl/YbktSj');
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 2px 2px 0;
+}
+
+.login-right .loginwith {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #FFF;
+  text-align: center;
+}
+
+button.social-signin {
+  margin-bottom: 10px;
+  padding: 5px 0;
+  width: 220px;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+button.social-signin:hover,
+button.social-signin:focus {
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: 0.2s ease;
+}
+
+button.social-signin:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    transition: 0.2s ease;
+}
+
+button.social-signin.facebook {
+    background: #32508E;
+}
+
+button.social-signin.twitter {
+    background: #55ACEE;
+}
+
+button.social-signin.google {
+    background: #DD4B39;
+}
+
+/*Khung thong tin nguoi dung (phia admin)*/
+.formuser{
+    width: 100%;
+}
+
+.formuser li {
+    margin-right: 5px;
+    padding-bottom: 7px;
+}
+.formuser ul{
+    list-style-type: none;
+    text-align: left;
+}
+.formuser ul:nth-child(1){
+    font-weight: bold;
+}
+.formuser ul:nth-child(2), .log dd{
+    color: grey;
+}
+.formuser i {
+    color: red;
+}
+
+.userinfo, .userconnect{
+    vertical-align: text-top;
+}
+
+.userinfo {
+    border-right: 2px solid #eda774;
+}
+
+.userconnect{
+    width: 10%;
+}
+.userconnect div{
+    padding-left: 10px;
+}

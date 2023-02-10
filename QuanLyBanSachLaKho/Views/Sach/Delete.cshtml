@@ -1,0 +1,124 @@
+﻿@model QuanLyBanSachLaKho.Models.Sach
+
+@{
+    ViewBag.Title = "Xóa Sách";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link href="~/css/kesach.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+
+<br />
+<h2 style="text-align: center;"><b>BẠN CÓ CHẮC LÀ MUỐN XÓA CUỐN SÁCH NÀY?</b></h2>
+
+<div class="log">
+    <div class="formdangnhap container">
+        <dl class="formuser">
+            <dt>
+                Tên Sách:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenSach)
+            </dd>
+
+            <dt>
+                Kích Thước Sách:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KichThuoc)
+            </dd>
+
+            <dt>
+                Số Trang Sách:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SoTrang)
+            </dd>
+
+            <dt>
+                Ngày Phát Hành:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayPhatHanh)
+            </dd>
+
+            <dt>
+                Giá Bìa:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GiaBia)
+            </dd>
+
+            <dt>
+                Đơn Giá:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DonGia)
+            </dd>
+
+            <dt>
+                Số Lượng Sách:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SoLuongSach)
+            </dd>
+
+            <dt>
+                Mô Tả Sách:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MoTaSach)
+            </dd>
+
+            <dt>
+                Hình Sách:
+            </dt>
+
+            <dd>
+                <img src="~/image/@Model.HinhSach" style="width:50px" />
+                @Html.DisplayFor(model => model.HinhSach)
+            </dd>
+
+            <dt>
+                Nhà Xuất Bản:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NhaXuatBan.TenNXB)
+            </dd>
+
+            <dt>
+                Tác Giả:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TacGia.TenTG)
+            </dd>
+
+            <dt>
+                Thể Loại
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TheLoai.TenTheLoai)
+            </dd>
+        </dl>
+        <p>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Xóa cuốn sách" class="btn btn-danger" /> 
+                    <a href="/Sach" role="button" class="btn btn-secondary">Quay về danh sách</a>
+                </div>
+            }
+        </p>
+    </div>
+</div>

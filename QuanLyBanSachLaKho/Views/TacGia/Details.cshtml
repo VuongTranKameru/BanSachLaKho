@@ -1,0 +1,51 @@
+﻿@model QuanLyBanSachLaKho.Models.TacGia
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TacGia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenTG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgaySinhTG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinhTG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTaTG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTaTG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SdtTG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SdtTG)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaTG }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

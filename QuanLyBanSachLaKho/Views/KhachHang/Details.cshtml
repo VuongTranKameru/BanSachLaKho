@@ -1,0 +1,91 @@
+﻿@model QuanLyBanSachLaKho.Models.KhachHang
+
+@{
+    ViewBag.Title = "Thông Tin Tài Khoản";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link href="~/css/kesach.css" type="text/css" rel="stylesheet" asp-append-version="true" />
+
+<br />
+<h2 style="text-align: center;"><b>THÔNG TIN TÀI KHOẢN CỦA KHÁCH HÀNG</b></h2>
+
+<div class="log">
+    <div class="formdangnhap container">
+        <table class="formuser">
+            <tr>
+                <td class="userinfo">
+                    <h4>Thông tin cá nhân</h4>
+                    <div class="row row-cols-2">
+                        <ul class="col-4">
+                            <li>Mã Khách Hàng:</li>
+                            <li>Họ Và Tên Đệm:</li>
+                            <li>Tên:</li>
+                            <li>Ngày Sinh:</li>
+                            <li>Giới Tính:</li>
+                            <li>Địa chỉ:</li>
+                        </ul>
+                        <ul class="col-8">
+                            <li>@Html.DisplayFor(model => model.MaKH)</li>
+                            <li>@Html.DisplayFor(model => model.HoDemKH)</li>
+                            <li>@Html.DisplayFor(model => model.TenKH)</li>
+                            <li>
+                                @if ((Model.NgaySinh.HasValue))
+                                {@Html.DisplayFor(model => model.NgaySinh.ToString().Split(' ')[0]);
+                            }
+                            else
+                            { <i>chưa có dữ liệu</i>}
+                            </li>
+                            <li>
+                                @if ((Model.GioiTinh) != null)
+                                {@Html.DisplayFor(model => model.GioiTinh);
+                            }
+                            else
+                            { <i>chưa có dữ liệu</i>}
+                            </li>
+                            <li>@Html.DisplayFor(model => model.DiaChiKH)</li>
+                            <li style="padding-top: 230px">
+                                <a href="/KhachHang" role="button" class="btn btn-secondary">Trở lại danh sách</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                <td class="userconnect">
+                    <h4>Số điện thoại và Email</h4>
+                    <div class="row row-cols-2">
+                        <ul class="col-4">
+                            <li>Số điện thoại:</li>
+                            <li>Email:</li>
+                        </ul>
+                        <ul class="col-8">
+                            <li>@Html.DisplayFor(model => model.SdtKH)</li>
+                            <li>@Html.DisplayFor(model => model.Email)</li>
+                        </ul>
+                    </div>
+                    <h4>Bảo mật</h4>
+                    <div class="row row-cols-2">
+                        <ul class="col-4">
+                            <li>Tài khoản:</li>
+                            <li>Mật khẩu:</li>
+                        </ul>
+                        <ul class="col-8">
+                            <li>@Html.DisplayFor(model => model.TaiKhoan)</li>
+                            <li>@Html.DisplayFor(model => model.MatKhau)</li>
+                        </ul>
+                    </div>
+                    <h4>Liên kết mạng xã hội</h4>
+                    <div class="row justify-content-md-center">
+                        <ul class="col col-lg-2">
+                        </ul>
+                        <ul class="col-md-auto">
+                            <li><button class="social-signin facebook">Facebook</button></li>
+                            <li><button class="social-signin twitter">Twitter</button></li>
+                            <li><button class="social-signin google">Google+</button></li>
+                        </ul>
+                        <ul class="col col-lg-2">
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<QuanLyBanSachLaKho.Models.TacGia>
+
+@{
+    ViewBag.Title = "Danh Sách Tác Giả";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>QUẢN LÝ TÁC GIẢ</h2>
+
+<div style="padding-bottom:10px;">
+    <a class="btn btn-light" href='@Url.Action("Create", "TacGia")' role="button">
+        + Thêm Tác Giả Mới
+    </a>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <tr class="bg-warning">
+            <th>
+                Mã Tác Giả
+            </th>
+            <th>
+                Tên Tác Giả
+            </th>
+            <th>
+                Ngày Sinh TG
+            </th>
+            <th class="col-3">
+                Mô Tả TG
+            </th>
+            <th>
+                Số Điện Thoại TG
+            </th>
+            <th class="col-1"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="table-warning">
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaTG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenTG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgaySinhTG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoTaTG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SdtTG)
+                </td>
+                <td>
+                    <a href='@Url.Action("Edit", "TacGia", new { id = item.MaTG })'>
+                        <i class="icon icon-wrap nalika-edit"></i>
+                    </a>
+                    <a href='@Url.Action("Details", "TacGia", new { id = item.MaTG })'>
+                        <i class="icon icon-wrap nalika-info"></i>
+                    </a>
+                    <a href='@Url.Action("Delete", "TacGia", new { id = item.MaTG })'>
+                        <i class="icon icon-wrap nalika-delete-button"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
